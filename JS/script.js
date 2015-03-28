@@ -7,22 +7,23 @@ SDI Section 01
 
 //Variables:
 
-var request = prompt("Do you want the numbers for the Florida Lottery?");
+var request = prompt("Do you want the numbers for the Florida Lottery?"); //prompt needed for the assignment asking whether they want to see the results or not.
 
 
 //Functions 1:
 
-function Verification(answer) {  //argument
+function Verification(answer) {  //answer = argument
 
     var responses = 1;
 
     while (answer === ""){  //while loop code block
         prompt("Please enter a response to continue."); //prompt is shown on screen versus the console
         responses++;
-        if (responses === 5) {
+        if (responses === 5) { //5 loops
             alert("Not a valid response.");
-            break;
+             break;//in case they decide to not fill in anything this will pop up after 5 tries
         }
+
     }
 
     return answer;
@@ -34,7 +35,7 @@ function Verification(answer) {  //argument
 
 function lotto(min, max, par) { //parameter of 6 total answers that are random at once
 
-    var rand = []; //inorder to have 6 seperate numbers it has to be an array code
+    var rand = []; //in order to have 6 separate numbers it has to be an array code
 
     for (var i = 0; i < par; i++){ //this declares between which numbers those 6 numbers can be.
         var numbers = Math.round(Math.random() * (max - min) + min); //math.random allows completely random numbers every  and Math,round allows for whole numbers and no decimals
