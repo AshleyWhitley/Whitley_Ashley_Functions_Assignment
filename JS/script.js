@@ -10,7 +10,7 @@ SDI Section 01
 var request = prompt("Do you want the numbers for the Florida Lottery?");
 
 
-//Functions:
+//Functions 1:
 
 function Verification(answer) {  //argument
 
@@ -29,29 +29,28 @@ function Verification(answer) {  //argument
 }
 
 
-//Main Code
+//Function 2:
+
+function lotto(min, max, par) { //parameter of 6 total answers that are random at once
+
+    var rand = [];
+
+    for (var i = 0; i < par; i++){
+        var numbers = Math.round(Math.random() * (max - min) + min); //math.random allows completely random numbers every  and Math,round allows for whole numbers and no decimals
+
+        rand[i] = numbers;
+    }
+
+    return rand;
+}
+
+//Main Code 1
 
 request = Verification(request);  //value sent to the variable to produce the function
 console.log("Thank you for responding with" + " "+ request + ". Below are the winning numbers!");
 
+//Main Code 2
 
+rand = lotto(1, 53, 6);
+console.log(rand);
 
-
-/*function printNumbers(numbers,type){
-    for(var x in numbers){
-        document.getElementById(type+x).innerHTML = numbers[x];
-    }
-}
-function getNumbers(totalBalls,balls) {
-    var numbers = [];
-    for (var i = balls; i > 0; i--){
-        numbers.push(i);
-    }
-    numbers.sort(
-        function(){
-            return (Math.round(Math.random())-0.5);
-        }
-    );
-    return numbers.slice(0,totalBalls);
-}
-*/
